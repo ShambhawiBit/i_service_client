@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Category/Categories.dart';
 import '../Category/cat.dart';
 import '../Category/category_grid.dart';
+import '../navpage/navigationbar.dart';
+import '../search_screen/Search.dart';
 class frame extends StatefulWidget {
   const frame({Key? key}) : super(key: key);
 
@@ -41,8 +44,11 @@ class _frameState extends State<frame> {
                             SizedBox(
                               width: 5,
                             ),
-                            Icon(Icons.waving_hand,size: 8,color: Colors.yellow,),
+                            Icon(Icons.waving_hand,size: 14,color: Colors.yellow.shade700,),
                           ],
+                        ),
+                        SizedBox(
+                          height: 5,
                         ),
                         Text("What would you like to do?",style:TextStyle(
                             color: Color(0xeff000000),
@@ -136,8 +142,14 @@ class _frameState extends State<frame> {
                                       borderRadius: BorderRadius.circular(32.0)),
                                   minimumSize: Size(150,50), //////// HERE
                                 ),
-                                onPressed: () {},
-                                child: Text('view offer',style: TextStyle(
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: ((context){
+                                    return NavBar();
+                                  }),
+                                  ),
+                                  );
+                                },
+                                child: Text('View offer',style: TextStyle(
                                     color: Color(0xeffFAFCFC),
                                     fontSize: 14,fontWeight: FontWeight.w400
                                 ),),
@@ -228,7 +240,7 @@ class _frameState extends State<frame> {
                       ),
 
                       Padding(
-                        padding: const EdgeInsets.only(left: 16,right: 70,bottom: 16),
+                        padding: const EdgeInsets.only(left: 16,right: 70,bottom: 16,top: 5),
                         child: Text("Lorem ipsum dolor sit amet, consectur"
                             " adipiscing elit. Donec dictum augue ex,"
                             " a feugiat libero porttitor vel",textAlign: TextAlign.left,),
@@ -254,10 +266,15 @@ class _frameState extends State<frame> {
                         fontSize: 16,fontWeight: FontWeight.w600,
                       ),),
 
-                    Text("See all",
-                      style:TextStyle( color: Color(0xeffEE610F),
-                        fontSize: 16,fontWeight: FontWeight.w600,decoration: TextDecoration.underline,
-                      ),)
+                    GestureDetector(
+                      child: Text("See all",
+                        style:TextStyle( color: Color(0xeffEE610F),
+                          fontSize: 16,fontWeight: FontWeight.w600,decoration: TextDecoration.underline,
+                        ),),
+                        onTap: () {
+
+                        }
+                    )
                   ],
                 ),
               ),
@@ -312,16 +329,17 @@ class _frameState extends State<frame> {
                     color: Color(0xffFFFFFF),
                     boxShadow: [
                       BoxShadow(
-                        color:Colors.grey,
-                        blurRadius: 15.0, // soften the shadow
-                        spreadRadius: 5.0, //extend the shadow
-                        offset: Offset(
-                          5.0, // Move to right 5  horizontally
-                          5.0, // Move to bottom 5 Vertically
+                        color: Color.fromRGBO(0, 0, 0, 0.08),
+                        offset: const Offset(
+                          5.0,
+                          5.0,
                         ),
-                      )
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
                     ],
                   ),
+
                   child: Image.asset("assets/images/apple.png",height: 56,width: 56,),
                 ),
                 Container(
@@ -331,16 +349,17 @@ class _frameState extends State<frame> {
                     color: Color(0xffFFFFFF),
                     boxShadow: [
                       BoxShadow(
-                        color:Colors.grey,
-                        blurRadius: 15.0, // soften the shadow
-                        spreadRadius: 5.0, //extend the shadow
-                        offset: Offset(
-                          5.0, // Move to right 5  horizontally
-                          5.0, // Move to bottom 5 Vertically
+                        color: Color.fromRGBO(0, 0, 0, 0.08),
+                        offset: const Offset(
+                          5.0,
+                          5.0,
                         ),
-                      )
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
                     ],
                   ),
+
                   child: Image.asset("assets/images/samsung.png",height: 56,width: 56,),
                 ),
                 Container(
@@ -350,16 +369,17 @@ class _frameState extends State<frame> {
                     color: Color(0xffFFFFFF),
                     boxShadow: [
                       BoxShadow(
-                        color:Colors.grey,
-                        blurRadius: 15.0, // soften the shadow
-                        spreadRadius: 5.0, //extend the shadow
-                        offset: Offset(
-                          5.0, // Move to right 5  horizontally
-                          5.0, // Move to bottom 5 Vertically
+                        color: Color.fromRGBO(0, 0, 0, 0.08),
+                        offset: const Offset(
+                          5.0,
+                          5.0,
                         ),
-                      )
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
                     ],
                   ),
+
                   child: Image.asset("assets/images/nokia.png",height: 56,width: 56,),
                 )
               ],
@@ -394,16 +414,17 @@ class _frameState extends State<frame> {
                         color: Color(0xffFFFFFF),
                         boxShadow: [
                           BoxShadow(
-                            color:Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 5.0, //extend the shadow
-                            offset: Offset(
-                              5.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            offset: const Offset(
+                              5.0,
+                              5.0,
                             ),
-                          )
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
                         ],
                       ),
+
                       child: Image.asset("assets/images/sony.png",height: 56,width: 56,),
                     ),
                     Container(
@@ -413,16 +434,17 @@ class _frameState extends State<frame> {
                         color: Color(0xffFFFFFF),
                         boxShadow: [
                           BoxShadow(
-                            color:Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 5.0, //extend the shadow
-                            offset: Offset(
-                              5.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            offset: const Offset(
+                              5.0,
+                              5.0,
                             ),
-                          )
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
                         ],
                       ),
+
                       child: Image.asset("assets/images/samsung.png",height: 56,width: 56,),
                     ),
                     Container(
@@ -432,16 +454,17 @@ class _frameState extends State<frame> {
                         color: Color(0xffFFFFFF),
                         boxShadow: [
                           BoxShadow(
-                            color:Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 5.0, //extend the shadow
-                            offset: Offset(
-                              5.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            offset: const Offset(
+                              5.0,
+                              5.0,
                             ),
-                          )
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
                         ],
                       ),
+
                       child: Image.asset("assets/images/hinese.png",height: 56,width: 56,),
                     )
                   ],
@@ -476,55 +499,57 @@ class _frameState extends State<frame> {
                         color: Color(0xffFFFFFF),
                         boxShadow: [
                           BoxShadow(
-                            color:Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 5.0, //extend the shadow
-                            offset: Offset(
-                              5.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            offset: const Offset(
+                              5.0,
+                              5.0,
                             ),
-                          )
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
                         ],
-
                       ),
+
                       child: Image.asset("assets/images/sony.png",height: 56,width: 56,),
                     ),
                     Container(
                       height:83 ,
                       width: 105,
                       decoration: BoxDecoration(
+                        color: Color(0xffFFFFFF),
                         boxShadow: [
                           BoxShadow(
-                            color:Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 5.0, //extend the shadow
-                            offset: Offset(
-                              5.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            offset: const Offset(
+                              5.0,
+                              5.0,
                             ),
-                          )
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
                         ],
-                        color: Color(0xffFFFFFF),
                       ),
+
                       child: Image.asset("assets/images/panasonic.png",height: 56,width: 56,),
                     ),
                     Container(
                       height:83 ,
                       width: 105,
                       decoration: BoxDecoration(
+                        color: Color(0xffFFFFFF),
                         boxShadow: [
                           BoxShadow(
-                            color:Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 5.0, //extend the shadow
-                            offset: Offset(
-                              5.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            offset: const Offset(
+                              5.0,
+                              5.0,
                             ),
-                          )
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
                         ],
-                        color: Color(0xffFFFFFF),
                       ),
+
                       child: Image.asset("assets/images/canon.png",height: 56,width: 56,),
                     )
                   ],
@@ -559,54 +584,57 @@ class _frameState extends State<frame> {
                         color: Color(0xffFFFFFF),
                         boxShadow: [
                           BoxShadow(
-                            color:Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 5.0, //extend the shadow
-                            offset: Offset(
-                              5.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            offset: const Offset(
+                              5.0,
+                              5.0,
                             ),
-                          )
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
                         ],
                       ),
+
                       child: Image.asset("assets/images/hp.png",height: 56,width: 56,),
                     ),
                     Container(
                       height:83 ,
                       width: 105,
                       decoration: BoxDecoration(
+                        color: Color(0xffFFFFFF),
                         boxShadow: [
                           BoxShadow(
-                            color:Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 5.0, //extend the shadow
-                            offset: Offset(
-                              5.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            offset: const Offset(
+                              5.0,
+                              5.0,
                             ),
-                          )
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
                         ],
-                        color: Color(0xffFFFFFF),
                       ),
+
                       child: Image.asset("assets/images/panasonic.png",height: 56,width: 56,),
                     ),
                     Container(
                       height:83 ,
                       width: 105,
                       decoration: BoxDecoration(
+                        color: Color(0xffFFFFFF),
                         boxShadow: [
                           BoxShadow(
-                            color:Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 5.0, //extend the shadow
-                            offset: Offset(
-                              5.0, // Move to right 5  horizontally
-                              5.0, // Move to bottom 5 Vertically
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            offset: const Offset(
+                              5.0,
+                              5.0,
                             ),
-                          )
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
                         ],
-                        color: Color(0xffFFFFFF),
                       ),
+
                       child: Image.asset("assets/images/canon.png",height: 56,width: 56,),
                     )
                   ],

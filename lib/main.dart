@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       ),
       // Category: const search(),
       //home:buyParts()
-    home: NavBar(),
+      //home: NavBar(),
       //home:signup(),
       //home: login(),
       //home: logintwo(),
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       //home: profile2()
       // home: page_controller(),
       //home: frame(),
-      //home: Signuptwo(),
+      home: Signuptwo(),
     );
   }
 }

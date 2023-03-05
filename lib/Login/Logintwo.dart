@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import '../Profile/profile2.dart';
+import '../Profile/profileone.dart';
 class logintwo extends StatefulWidget {
   const logintwo({Key? key}) : super(key: key);
 
@@ -115,37 +118,46 @@ class _logintwoState extends State<logintwo> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("Forgot Password?",
-                      style:TextStyle(
-
-                          fontSize: 12,fontWeight: FontWeight.w500,fontFamily: "Montserrat",
-                          decoration: TextDecoration.underline ,
-                          color: Color(0xeffEE610F),decorationColor: Color(0xffEE610F)),)
+                    // Text("Forgot Password?",
+                    //   style:TextStyle(
+                    //
+                    //       fontSize: 12,fontWeight: FontWeight.w500,fontFamily: "Montserrat",
+                    //       decoration: TextDecoration.underline ,
+                    //       color: Color(0xeffEE610F),decorationColor: Color(0xffEE610F)),)
                   ],
                 ),
               ),
 
-              Padding(
-                padding: const EdgeInsets.only(top: 7,left: 15,right: 15),
-                child:Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children:<Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children:<Widget>[
 
-                    Padding(
-                      padding: const EdgeInsets.only(left: 24,right: 19.5,bottom: 27.5),
-                      child: Icon(Icons.crop_square_outlined),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24,right: 19.5,bottom: 27.5),
+                    child: Icon(Icons.crop_square_outlined),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 27.5),
+                    child: Text('Remember me',
+                      style: TextStyle(fontWeight: FontWeight.w400,
+                          fontFamily: 'Montserrat',color: Color(0xff0A151F)),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 27.5),
-                      child: Text('Remember me',
-                        style: TextStyle(fontWeight: FontWeight.w400,
-                            fontFamily: 'Montserrat',color: Color(0xff0A151F)),
-                      ),
+                  ),
+                   SizedBox(
+                     width: 70,
+                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 27.5,right: 15),
+                    child: Container(
+                      child: Text("Forgot Password?",
+                        style:TextStyle(
+
+                            fontSize: 12,fontWeight: FontWeight.w500,fontFamily: "Montserrat",
+                            decoration: TextDecoration.underline ,
+                            color: Color(0xeffEE610F),decorationColor: Color(0xffEE610F)),),
                     ),
-
-
-                  ],
-                ),
+                  )
+                ],
               ),
               SizedBox(
                 height: 32,
@@ -166,7 +178,11 @@ class _logintwoState extends State<logintwo> {
                       ),
                     ),
                     onPressed: (){
-
+                      Navigator.push(context, MaterialPageRoute(builder: ((context){
+                        return profileone();
+                      }),
+                      ),
+                      );
                     },
                   )
               ),

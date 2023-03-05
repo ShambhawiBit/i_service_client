@@ -17,12 +17,28 @@ class _profileListItemsState extends State<profileListItems> {
         Padding(
           padding: const EdgeInsets.only(top: 27,left: 24,right: 24),
           child: Container(
-            color: Color(0xffFEFEFE),
+
+            decoration: BoxDecoration(
+              color: Color(0xffFEFEFE),
+    boxShadow: [
+    BoxShadow(
+    color: Color.fromRGBO(0, 0, 0, 0.08),
+    offset: const Offset(
+    5.0,
+    5.0,
+    ),
+    blurRadius: 10.0,
+    spreadRadius: 2.0,
+    ), //BoxShadow
+    ],
+    ),
+
             child: ListTile(
-              leading: Icon(Icons.call,color: Color(0xffEE610F),),
+              leading: Icon(Icons.call_outlined,color: Color(0xffEE610F),),
               title: Text("Contact us",
                 style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,fontFamily: 'Montserrat',color: Color(0xff000000)),),
               trailing: Icon(Icons.arrow_back_ios_rounded,size: 12,color: Color(0xff292D32),),
+
             ),
           ),
         ),
@@ -30,20 +46,49 @@ class _profileListItemsState extends State<profileListItems> {
         Padding(
           padding: const EdgeInsets.only(top: 27,left: 24,right: 24),
           child: Container(
-            color: Color(0xffFEFEFE),
+
+            decoration: BoxDecoration(
+              color: Color(0xffFEFEFE),
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.08),
+                  offset: const Offset(
+                    5.0,
+                    5.0,
+                  ),
+                  blurRadius: 10.0,
+                  spreadRadius: 2.0,
+                ), //BoxShadow
+              ],
+            ),
             child: ListTile(
-              leading: Icon(Icons.privacy_tip,color: Color(0xffEE610F),),
+              leading: Icon(Icons.privacy_tip_outlined,color: Color(0xffEE610F),),
               title: Text("Privacy Policy",
-                style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,fontFamily: 'Montserrat',color: Color(0xff000000)),),
+                style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,
+                    fontFamily: 'Montserrat',color: Color(0xff000000)),),
               trailing: Icon(Icons.arrow_back_ios_rounded,size: 12,color: Color(0xff292D32),),
             ),
           ),
         ),Padding(
           padding: const EdgeInsets.only(top: 27,left: 24,right: 24),
           child: Container(
-            color: Color(0xffFEFEFE),
+            decoration: BoxDecoration(
+              color: Color(0xffFEFEFE),
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.08),
+                  offset: const Offset(
+                    5.0,
+                    5.0,
+                  ),
+                  blurRadius: 10.0,
+                  spreadRadius: 2.0,
+                ), //BoxShadow
+              ],
+            ),
+
             child: ListTile(
-              leading: Icon(Icons.quick_contacts_dialer,color: Color(0xffEE610F)),
+              leading: Icon(Icons.quick_contacts_dialer_outlined,color: Color(0xffEE610F)),
               title: Text("Terms and Conditions",
                 style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,fontFamily: 'Montserrat',color: Color(0xff000000)),),
               trailing: Icon(Icons.arrow_back_ios_rounded,size: 12,color: Color(0xff292D32),),
@@ -54,7 +99,21 @@ class _profileListItemsState extends State<profileListItems> {
           padding: const EdgeInsets.only(top: 27,left: 24,right: 24),
           child: GestureDetector(
             child: Container(
-              color: Color(0xffFEFEFE),
+              decoration: BoxDecoration(
+                color: Color(0xffFEFEFE),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.08),
+                    offset: const Offset(
+                      5.0,
+                      5.0,
+                    ),
+                    blurRadius: 10.0,
+                    spreadRadius: 2.0,
+                  ), //BoxShadow
+                ],
+              ),
+
               child: ListTile(
                 leading: Icon(Icons.lock_outline_rounded,color: Color(0xffEE610F)),
                 title: Text("Change Password",
@@ -74,7 +133,21 @@ class _profileListItemsState extends State<profileListItems> {
         Padding(
           padding: const EdgeInsets.only(top: 27,left: 24,right: 24),
           child: Container(
-            color: Color(0xffFEFEFE),
+            decoration: BoxDecoration(
+              color: Color(0xffFEFEFE),
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(0, 0, 0, 0.08),
+                  offset: const Offset(
+                    5.0,
+                    5.0,
+                  ),
+                  blurRadius: 10.0,
+                  spreadRadius: 2.0,
+                ), //BoxShadow
+              ],
+            ),
+
             child: ListTile(
               leading: Icon(Icons.logout,color: Color(0xffEE610F)),
               title: Text("Logout",

@@ -92,17 +92,6 @@ int? sharedValue = 0;
             height: 70,
            color: Color(0xffFFFFFF),
             child: SizedBox(
-              // child: CupertinoSegmentedControl(
-              //   selectedColor: Color(0xffFFF0E7),
-              //   borderColor: Color(0xffEE610F),
-              //   children: loginWidgets,
-              //   onValueChanged: (int val){
-              //     setState(() {
-              //       sharedValue = val;
-              //     });
-              //   },
-              //   groupValue: sharedValue ,
-              // ),
             child:  Padding(
               padding: const EdgeInsets.only(left: 10,right: 10),
               child: CustomSlidingSegmentedControl<int>(

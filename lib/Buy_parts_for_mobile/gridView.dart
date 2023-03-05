@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../Frame/Frame.dart';
+import '../Onboarding/Onboarding1.dart';
+
 class Gridview extends StatefulWidget {
   const Gridview({Key? key}) : super(key: key);
 
@@ -9,17 +12,18 @@ class Gridview extends StatefulWidget {
 
 class _GridviewState extends State<Gridview> {
   List imageList = [
-    {"image": "assets/images/apple.png"},
-    {"image": "assets/images/samsung.png"},
-    {"image": "assets/images/mi.png"},
-    {"image": "assets/images/nokia.png"},
-    {"image": "assets/images/oppo.png"},
-    {"image": "assets/images/nokia.png"},
+    {"image": "assets/images/applebig.png"},
+    {"image": "assets/images/Samsungbig.png"},
+    {"image": "assets/images/mibig.png"},
+    {"image": "assets/images/nokiabig.png"},
+    {"image": "assets/images/oppobig.png"},
+    {"image": "assets/images/nokiabig.png"},
   ];
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 8, right: 8),
+      //margin: EdgeInsets.only(left: 8, right: 8),
+       color: Color(0xffFFFFFF),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -28,43 +32,46 @@ class _GridviewState extends State<Gridview> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  crossAxisCount: 2),
-              itemBuilder: (context, index) => Container(
-                height: 125,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10)),
-                child: Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                            ),
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          height: 91,
-                          width: double.infinity,
+                //childAspectRatio:
+                //MediaQuery.of(context).size.width * .44 / 246,
+                mainAxisSpacing: 0,
+                crossAxisSpacing:10,
+                crossAxisCount: 2,
+                // mainAxisExtent:170
+              ),
+              itemBuilder: (context, index) => Column(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4.0),
+                        ),
+                        //height: 139,
+                        width: double.infinity,
+                        child: GestureDetector(
                           child: Image.asset(
                             imageList[index]['image'],
                             fit: BoxFit.cover,
                           ),
+                            onTap: () {
+                              showDialog(context: context, builder: (BuildContext context) {
+                                return page_controller();
+                              });
+                            }
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+
+                ],
               ),
             ),
           ],
         ),
+
       ),
     );
   }

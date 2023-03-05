@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:i_service_client/Profile/profile2.dart';
 class profile_dilog extends StatefulWidget {
   const profile_dilog({Key? key}) : super(key: key);
 
@@ -139,7 +140,11 @@ class _profile_dilogState extends State<profile_dilog> {
                     ),
                   ),
                   onPressed: (){
-
+                    Navigator.push(context, MaterialPageRoute(builder: ((context){
+                      return profile2();
+                    }),
+                    ),
+                    );
                   },
                 )
             ),

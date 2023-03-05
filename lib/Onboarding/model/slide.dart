@@ -146,6 +146,7 @@ final slideList = [
                     minimumSize: Size(150,50), //////// HERE
                   ),
                   onPressed: () {
+
                   },
                   child: Text('Get Started',
                     style: TextStyle(color: Color(0xffFAFCFC),

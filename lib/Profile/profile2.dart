@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:i_service_client/Profile/profile_details.dart';
+
+import '../Frame/Frame.dart';
+import '../Onboarding/Onboarding1.dart';
 class profile2 extends StatefulWidget {
   const profile2({Key? key}) : super(key: key);
 
@@ -15,7 +18,9 @@ class _profile2State extends State<profile2> {
       backgroundColor: Color(0xffEDEDED),
       appBar: AppBar(
         backgroundColor:
-        Color(0xffEDEDED),
+        Color(0xfffff0e7),
+        bottomOpacity: 0.0,
+        elevation: 0.0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -44,9 +49,16 @@ class _profile2State extends State<profile2> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(15),
-            child: Text("SAVE",
-              style: TextStyle(fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w600,color: Color(0xffEE610F),fontSize: 14),),
+            child: GestureDetector(
+              child: Text("SAVE",
+                style: TextStyle(fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w600,color: Color(0xffEE610F),fontSize: 14),),
+                onTap: () {
+                  showDialog(context: context, builder: (BuildContext context) {
+                    return frame();
+                  });
+                }
+            ),
           ),
         ],
       ),

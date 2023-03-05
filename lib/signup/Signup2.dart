@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../Login/Logintwo.dart';
 class Signuptwo extends StatefulWidget {
   const Signuptwo({Key? key}) : super(key: key);
 
@@ -7,6 +9,12 @@ class Signuptwo extends StatefulWidget {
 }
 
 class _SignuptwoState extends State<Signuptwo> {
+  bool passwordVisible=false;
+  @override
+  void initState() {
+    super.initState();
+    passwordVisible = true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,13 +116,28 @@ class _SignuptwoState extends State<Signuptwo> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 24,right: 24),
-                    child:TextField(
+                    child: TextField(
+                      //obscureText: passwordVisible,
                       obscureText: true,
                       decoration: InputDecoration(
-                          hintText: '*****',
-                          suffixIcon: Icon(Icons.remove_red_eye),
+                          hintText: "********",
+
+                          suffixIcon: IconButton(
+                            icon: Icon(passwordVisible
+                                ? Icons.visibility_off
+                                : Icons.visibility),
+                            onPressed: () {
+                              setState(
+                                    () {
+                                  passwordVisible = !passwordVisible;
+                                },
+                              );
+                            },
+                          ),
                           border:OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
+                              borderRadius: BorderRadius.circular(10))
+                      ),
+                      keyboardType: TextInputType.visiblePassword,
                     ),
                   ),
                   SizedBox(
@@ -123,56 +146,50 @@ class _SignuptwoState extends State<Signuptwo> {
                   Padding(
                     padding: const EdgeInsets.only(top: 7,left: 15,right: 15),
                     child:Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children:<Widget>[
 
-                        Padding(
-                          padding: const EdgeInsets.only(left: 24,right: 19.5,bottom: 27.5),
-                          child: Icon(Icons.crop_square_outlined),
-                        ),
+                        Icon(Icons.crop_square_outlined),
                         SizedBox(
-                          width: 19.5,
+                          width: 19//19.5,
                         ),
                         Container(
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children:[
-                                Text('I agree to I service’s',
-                                  style: TextStyle(fontWeight: FontWeight.w400,
-                                      fontFamily: 'Montserrat',color: Color(0xff000000)),
-                                ),
-                                    SizedBox(
-                                      width: 1,
-                                    ),
-                                    Text('terms of use',
-                                      style: TextStyle(fontWeight: FontWeight.w400,
-                                          fontFamily: 'Montserrat',
-                                          decoration: TextDecoration.underline,
-                                          color: Color(0xffEE610F),decorationColor:Color(0xffEE610F) ),
-                                    ),
-                                    SizedBox(
-                                      width: 1,
-                                    ),
-                                    Text('and',
-                                      style: TextStyle(fontWeight: FontWeight.w400,
-                                          fontFamily: 'Montserrat'),
-                                    ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children:[
+                              Text('I agree to I service’s',
+                                style: TextStyle(fontWeight: FontWeight.w400,
+                                    fontFamily: 'Montserrat',color: Color(0xff000000)),
+                              ),
+                                  SizedBox(
+                                    width: 1,
+                                  ),
+                                  Text('terms of use',
+                                    style: TextStyle(fontWeight: FontWeight.w400,
+                                        fontFamily: 'Montserrat',
+                                        decoration: TextDecoration.underline,
+                                        color: Color(0xffEE610F),decorationColor:Color(0xffEE610F) ),
+                                  ),
+                                  SizedBox(
+                                    width: 1,
+                                  ),
+                                  Text('and',
+                                    style: TextStyle(fontWeight: FontWeight.w400,
+                                        fontFamily: 'Montserrat'),
+                                  ),
 
-                               ]
-                                ),
-                                Text('privacy condition',
-                                  style: TextStyle(fontWeight: FontWeight.w400,
-                                      fontFamily: 'Montserrat',
-                                      decoration: TextDecoration.underline,
-                                      decorationColor: Color(0xffEE610F),color:Color(0xff0EE610F)),
-                                ),
-                              ],
-                            ),
+                             ]
+                              ),
+                              Text('privacy condition',
+                                style: TextStyle(fontWeight: FontWeight.w400,
+                                    fontFamily: 'Montserrat',
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: Color(0xffEE610F),color:Color(0xff0EE610F)),
+                              ),
+                            ],
                           ),
                         )
 
@@ -199,7 +216,11 @@ class _SignuptwoState extends State<Signuptwo> {
                           ),
                         ),
                         onPressed: (){
-
+                          Navigator.push(context, MaterialPageRoute(builder: ((context){
+                            return logintwo();
+                          }),
+                          ),
+                          );
                         },
                       )
                   ),

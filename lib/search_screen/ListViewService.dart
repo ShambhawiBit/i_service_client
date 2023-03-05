@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../Buy_parts_for_mobile/buy_parts_for_mobile.dart';
 class ListViewBuilder extends StatelessWidget {
   const ListViewBuilder({Key? key}) : super(key: key);
   @override
@@ -14,9 +16,16 @@ class ListViewBuilder extends StatelessWidget {
               leading: Image.asset("assets/images/mobileSegment.png",height: 58,width: 44,),
               title: Padding(
                 padding: EdgeInsets.only(bottom: 10),
-                child: Text("Mobile Repair",
-                  style: TextStyle(color:Colors.black ,
-                      fontSize: 14,fontFamily: 'Montserrat',fontWeight: FontWeight.w600),),
+                child: GestureDetector(
+                  child: Text("Mobile Repair",
+                    style: TextStyle(color:Colors.black ,
+                        fontSize: 14,fontFamily: 'Montserrat',fontWeight: FontWeight.w600),),
+    onTap: () {
+      showDialog(context: context, builder: (BuildContext context) {
+        return buyParts();
+      });
+    }
+                ),
               ),
               subtitle: Text('Battery Replacement',
                 style:TextStyle(color: Colors.black,
